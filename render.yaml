@@ -1,16 +1,9 @@
 services:
   - type: web
     name: web-automation-dashboard
-    env: node
+    env: docker
     region: oregon
     plan: free
-    buildCommand: npm ci && npx playwright install chromium
-    startCommand: npm start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        generateValue: true
     healthCheckPath: /api/health
 
 # Made with Bob
